@@ -1,0 +1,12 @@
+data/
+figures/
+.Rhistory
+.Rproj.user
+.RData
+.Ruserdata
+monarch-kg.tar
+monarch-kg_edges.tsv
+monarch-kg_nodes.tsv
+temp_folder/
+
+
