@@ -1,0 +1,19 @@
+```{r}
+
+```
+
+```{r}
+# Load a TSV file
+edges <- read.delim("/home/rstudio/work/my_611_data_science_project/data/monarch-kg_edges.tsv", header = TRUE, sep = "\t")
+nodes <- read.delim("/home/rstudio/work/my_611_data_science_project/data/monarch-kg_nodes.tsv", header = TRUE, sep = "\t")
+```
+
+```{r}
+# Load the data.table package
+library(data.table)
+
+# Load a TSV file
+edges <- fread("/home/rstudio/work/my_611_data_science_project/data/monarch-kg_edges.tsv")
+nodes <- fread("/home/rstudio/work/my_611_data_science_project/data/monarch-kg_nodes.tsv")
+```
+
