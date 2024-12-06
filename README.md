@@ -64,7 +64,7 @@ cd My_BIOS611_data_science_project
 
 #### 2. Build a docker image 
 
-Build the docker container using the docker build command with the image name. For example, to build an image named 611, use the following command:
+Build the docker container using the docker build command with the image name. For example, to build an image named bios611_project, use the following command:
 
 ```
 docker build -t bios611_project .
@@ -83,7 +83,7 @@ For Powershell, use the following command to run the container:
 ```
 docker run -v ${pwd}:/home/rstudio/work -p 8787:8787 -it bios611_project
 ```
-Replace 611 with the image name used to build the container.
+Replace bios611_project with the image name used to build the container.
 
 #### 4. Running Rstudio Docker container
 
@@ -121,10 +121,10 @@ To generate the final report, run "make Report.html". This will create "Final_re
 make Report.html
 ```
   
-To generate the figures, run "make Demographics.png":
+To generate the figures, run "make Figures.png":
 	
 ```
-make Demographics.png
+make Figures.png
 ```
 
 To run all the scripts in the Makefile:
