@@ -27,12 +27,7 @@ RUN apt-get update -y && \
     apt-get clean
 
 # Install R packages from CRAN
-RUN R -e "install.packages(c('readr', 'ggplot2', 'dplyr', 'patchwork', 'kableExtra', 'pheatmap', 'R.utils', 'stringr'))"
-
-# Install Bioconductor and GitHub packages
-RUN R -e "install.packages('BiocManager')" && \
-    R -e "BiocManager::install(c('ComplexHeatmap'))" && \
-    R -e "remotes::install_github('griffithlab/GenVisR')"
+RUN R -e "install.packages(c('tidyverse', 'readr', 'data.table', 'ggplot2', 'FactoMineR', 'cluster', 'stringdist', 'factoextra', 'slib', 'clusterProfiler', 'dplyr', 'patchwork', 'kableExtra', 'pheatmap', 'R.utils', 'stringr'))"
 
 # Copy project files into the container
 COPY src/ /home/rstudio/work/src/
