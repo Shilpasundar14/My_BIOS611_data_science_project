@@ -5,7 +5,7 @@ clean:
 	rm -f *.png
 	rm -f *.html
 	rm -f figures/*.png
-	rm -rf derived_data/
+	rm -f derived_data/*.csv
 
 all: Report.html \
 		donut_chart.png \
