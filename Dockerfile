@@ -2,10 +2,13 @@
 FROM rocker/rstudio:latest
 
 # Update apt, run unminimize with automated 'yes' response, install man-db, and clean up after
-RUN apt update && \
-    yes | unminimize && \
-    apt install -y man-db && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt update && \
+#    yes | unminimize && \
+#    apt install -y man-db && \
+#   rm -rf /var/lib/apt/lists/*
+RUN apt update \
+&& apt install vim-tiny libmagick++-dev libudunits2-dev cargo libavfilter-dev libgdal-dev -y \
+&& rm -rf /var/lib/apt/lists/*
 
 # Expose the necessary port for RStudio
 EXPOSE 8787
@@ -27,15 +30,15 @@ RUN apt-get update -y && \
     apt-get clean
 
 # Install R packages from CRAN
-RUN R -e "install.packages(c('tidyverse', 'readr', 'data.table', 'ggplot2', 'FactoMineR', 'cluster', 'stringdist', 'factoextra', 'slib', 'clusterProfiler', 'dplyr', 'patchwork', 'kableExtra', 'pheatmap', 'R.utils', 'stringr'))"
+RUN R -e "install.packages(c('ggplot2', 'dplyr', 'klaR', 'Rtsne' , 'umap', 'fastDummies'))"
 
 # Copy project files into the container
-COPY src/ /home/rstudio/work/src/
-COPY data/ /home/rstudio/work/data/
-COPY report.Rmd /home/rstudio/work/
+# COPY src/ /home/rstudio/work/src/
+# COPY data/ /home/rstudio/work/data/
+# COPY report.Rmd /home/rstudio/work/
 
 # Set permissions for the working directory
-RUN chown -R rstudio:rstudio /home/rstudio/work
+# RUN chown -R rstudio:rstudio /home/rstudio/work
 
 # Clean up unnecessary files
-RUN rm -rf /var/lib/apt/lists/* /tmp/*
+# RUN rm -rf /var/lib/apt/lists/* /tmp/*
