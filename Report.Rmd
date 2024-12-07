@@ -22,6 +22,8 @@ This dataset can be used to study how different biological entities, particularl
 The availability of multiple knowledge sources and publication references adds credibility and depth to the dataset, making it a valuable resource for research and analysis in biomedical fields.
 
 ![Donut Chart](figures/donut_chart.png){align="center"}
+
+
 This chart illustrates the distribution of three different types of gene-to-disease associations based on the Biolink Model's classification. The proportions are as follows:
 1. Gene Associated with Condition (52.7% - represented in blue): This is the most prevalent type, indicating genes that are broadly associated with the given condition without necessarily implying causation.
 2. Causal Gene-to-Disease Association (43.2% - represented in red): This represents cases where a gene has been identified as directly causing the condition.
@@ -29,6 +31,8 @@ This chart illustrates the distribution of three different types of gene-to-dise
 These proportions provide insights into the nature of genetic studies related to the disease, emphasizing that while a majority of gene associations are observed, only a smaller portion (43.2%) are confirmed as causal relationships.
 
 ![Elbow Plot](figures/elbow_plot.png){align="center"}
+
+
 The elbow plot visualizes the relationship between the number of clusters (k) and the within-cluster dissimilarity (also known as the sum of squared distances or inertia). The x-axis represents the number of clusters (k), while the y-axis shows the within-cluster dissimilarity. The goal is to identify the optimal number of clusters that minimize within-cluster dissimilarity while avoiding overfitting by using too many clusters.
 The optimal value of k is determined by observing the "elbow" point on the plot—where the rate of reduction in dissimilarity sharply decreases. This point represents a balance between compactness (minimizing within-cluster dissimilarity) and simplicity (avoiding unnecessary complexity).
 * In the plot, the within-cluster dissimilarity drops significantly from k = 2 to k = 3, indicating that increasing the number of clusters from 2 to 3 captures a substantial improvement in grouping the data.
@@ -40,6 +44,8 @@ Tsne:
 One hot encoding is used for the categorical data for clustering. 
 
 ![Tsne Plot](figures/tsne_plot.png){align="center"}
+
+
 This t-SNE (t-distributed Stochastic Neighbor Embedding) plot visualizes the clustering of data points based on gene-to-disease associations. The plot maps high-dimensional data into a two-dimensional space (Dimension 1 and Dimension 2) while preserving the relative distances between data points to highlight natural groupings.
 Key Features:
 1. Clusters:
@@ -57,6 +63,8 @@ Insights:
 * This visualization helps identify patterns and groupings that might not be apparent in higher-dimensional data, aiding in the interpretation of gene-disease relationships.
 
 ![Laballed Tsne Plot](figures/labelled_tsne_plot.png){align="center"}
+
+
 The features were identified by comparing with the original data.
 
 Umap Analysis:
@@ -64,9 +72,13 @@ Umap Analysis:
 Dimentionality reduction was performed using umap. 
 
 ![Umap Plot](figures/umap_plot.png){align="center"}
+
+
 This Umap plot shows two distinct patterns: one is a mix of clusters 1 and 2, and the other is cluster 3. Upon further exploration, it is identified that Umap captures the clusters based on the primary knowledge source.
 
 ![Summary Plot](figures/summary_plot.png){align="center"}
+
+
 The summary plot illustrates the distribution of predicates (relationships between genes and diseases) by their primary knowledge source, focusing on two sources: Inforres-Omim and Inforres-Orphanet. Each bar represents the count of associations for three predicate categories: "causes," "contributes to," and "gene associated with condition."
 Key Features:
 1. Primary Knowledge Sources:
