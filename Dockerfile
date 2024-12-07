@@ -30,7 +30,7 @@ RUN apt-get update -y && \
     apt-get clean
 
 # Install R packages from CRAN
-RUN R -e "install.packages(c('ggplot2', 'dplyr', 'klaR', 'Rtsne' , 'umap', 'fastDummies'))"
+RUN R -e "install.packages(c('readr', 'ggplot2', 'dplyr', 'klaR', 'Rtsne' , 'umap', 'fastDummies'))"
 
 # Copy project files into the container
 # COPY src/ /home/rstudio/work/src/
